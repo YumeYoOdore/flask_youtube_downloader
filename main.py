@@ -1,4 +1,4 @@
-import json, time
+import time
 import subprocess
 import os
 
@@ -14,10 +14,6 @@ def home():
 
         if not convert_checkbox:
             convert_checkbox = "off"
-
-        data_set = {'REQUESTED URL': f'{user_query}&mp3={convert_checkbox}'}
-
-        json_dump = json.dumps(data_set)
 
         subprocess.run(["./yt_downloader.sh", user_query, convert_checkbox])
         
